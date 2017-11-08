@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.StringActivity"></activity>
+        <activity android:name=".activity.StringActivity" />
+        <activity android:name=".activity.JsonActivity"></activity>
     </application>
 
 </manifest>

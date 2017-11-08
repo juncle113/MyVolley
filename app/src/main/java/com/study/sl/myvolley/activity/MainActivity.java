@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Button_json.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this, JsonActivity.class));
             }
         });
     }
