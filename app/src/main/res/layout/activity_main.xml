@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.study.sl.myvolley.activity.MainActivity">
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/Button_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="取得字符串数据" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/Button_json"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取得JSON数据" />
+
+    <Button
+        android:id="@+id/Button_gjson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取得GJSON数据" />
+
+    <Button
+        android:id="@+id/Button_xml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取得XML数据" />
+
+    <Button
+        android:id="@+id/Button_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取得图片" />
+
+    <Button
+        android:id="@+id/Button_cacheImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取得缓存图片" />
+</LinearLayout>
+
