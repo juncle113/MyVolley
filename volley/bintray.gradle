@@ -61,7 +61,8 @@ bintray {
 
     publications = [ 'library' ]
 
-    publish = project.has("release")
+    //publish = project.has("release")
+    publish = project.hasProperty("release")
     pkg {
         userOrg = 'android'
         repo = 'android-utils'
