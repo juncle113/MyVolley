@@ -93,4 +93,24 @@ public class VolleyUtil {
         });
         MyApplication.getRequestQueue().add(xmlRequest);
     }
+
+    public static void getGson() {
+        GsonRequest<Weather> gsonRequest = new GsonRequest<Weather>(
+                "http://www.weather.com.cn/data/sk/101010100.html", Weather.class,
+                new Response.Listener<Weather>() {
+                    @Override
+                    public void onResponse(Weather weather) {
+                        WeatherInfo weatherInfo = weather.getWeatherinfo();
+                        Log.d("TAG", "city is " + weatherInfo.getCity());
+                        Log.d("TAG", "temp is " + weatherInfo.getTemp());
+                        Log.d("TAG", "time is " + weatherInfo.getTime());
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("TAG", error.getMessage(), error);
+            }
+        });
+        MyApplication.getRequestQueue().add(gsonRequest);
+    }
 }

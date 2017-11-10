@@ -29,6 +29,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     // 添加gradle依赖方式导入volley库
     implementation 'com.mcxiaoke.volley:library:1.0.+'
-    // 添加module方式导入volley库（需从官网下载源码）
+    // 添加module方式导入volley库（需从官网下载源码，但版本较旧）
     //implementation project(':volley')
+    implementation 'com.google.code.gson:gson:2.8.2'
 }
