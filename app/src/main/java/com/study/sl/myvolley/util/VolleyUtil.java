@@ -10,6 +10,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.study.sl.myvolley.R;
 import com.study.sl.myvolley.application.MyApplication;
@@ -43,5 +44,10 @@ public class VolleyUtil {
         imageLoader.get(url, imageListener);
     }
 
-
+    public static void getImageByNetwork(NetworkImageView imageView, String url, String tag) {
+        ImageLoader imageLoader = new ImageLoader(MyApplication.getRequestQueue(), new BitmapCache());
+        imageView.setDefaultImageResId(R.drawable.ic_launcher_background);
+        imageView.setErrorImageResId(R.drawable.ic_launcher_background);
+        imageView.setImageUrl(url, imageLoader);
+    }
 }
