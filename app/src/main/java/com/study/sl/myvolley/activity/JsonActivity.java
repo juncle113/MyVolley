@@ -30,11 +30,11 @@ public class JsonActivity extends AppCompatActivity {
     private void init() {
         TextView_json = (TextView) findViewById(R.id.TextView_json);
 
-        getDataByJson();
+        getJson();
     }
 
-    private void getDataByJson() {
-        VolleyUtil.getDataByJson(Method.GET,
+    private void getJson() {
+        VolleyUtil.getJson(Method.GET,
                 "http://www.weather.com.cn/data/cityinfo/101010100.html",
                 new Listener<JSONObject>() {
                     @Override

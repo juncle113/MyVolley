@@ -41,9 +41,10 @@
         android:text="取得图片" />
 
     <Button
-        android:id="@+id/Button_cacheImage"
+        android:id="@+id/Button_imageLoader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="取得缓存图片" />
+
 </LinearLayout>
 

@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button Button_string;
     private Button Button_json;
     private Button Button_image;
+    private Button Button_imageLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Button_string = findViewById(R.id.Button_string);
         Button_json = findViewById(R.id.Button_json);
         Button_image = findViewById(R.id.Button_image);
+        Button_imageLoader = findViewById(R.id.Button_imageLoader);
 
         Button_string.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ImageActivity.class));
+            }
+        });
+
+        Button_imageLoader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ImageLoaderActivity.class));
             }
         });
     }

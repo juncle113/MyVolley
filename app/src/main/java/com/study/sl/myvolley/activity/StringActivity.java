@@ -26,11 +26,11 @@ public class StringActivity extends AppCompatActivity {
     private void init() {
         TextView_string = (TextView)findViewById(R.id.TextView_string);
 
-        getDataByString();
+        getString();
     }
 
-    private void getDataByString() {
-        VolleyUtil.getDataByString(Request.Method.GET,
+    private void getString() {
+        VolleyUtil.getString(Request.Method.GET,
                 "https://m.baidu.com/?from=844b&vit=fps",
                 new Response.Listener<String>() {
                     @Override
