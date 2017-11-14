@@ -1,14 +1,11 @@
 package com.study.sl.myvolley.util;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.android.volley.toolbox.ImageRequest;
@@ -17,11 +14,6 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.study.sl.myvolley.R;
 import com.study.sl.myvolley.application.MyApplication;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
 
 /**
  * Created by SUNLI on 2017/11/8.
@@ -59,58 +51,15 @@ public class VolleyUtil {
         imageView.setImageUrl(url, imageLoader);
     }
 
-    public static void getXML() {
-        XMLRequest xmlRequest = new XMLRequest(
-                "http://flash.weather.com.cn/wmaps/xml/china.xml",
-                new Response.Listener<XmlPullParser>() {
-                    @Override
-                    public void onResponse(XmlPullParser response) {
-                        try {
-                            int eventType = response.getEventType();
-                            while (eventType != XmlPullParser.END_DOCUMENT) {
-                                switch (eventType) {
-                                    case XmlPullParser.START_TAG:
-                                        String nodeName = response.getName();
-                                        if ("city".equals(nodeName)) {
-                                            String pName = response.getAttributeValue(0);
-                                            Log.d("TAG", "pName is " + pName);
-                                        }
-                                        break;
-                                }
-                                eventType = response.next();
-                            }
-                        } catch (XmlPullParserException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("TAG", error.getMessage(), error);
-            }
-        });
-        MyApplication.getRequestQueue().add(xmlRequest);
+    public static void getXML(String url, Listener listener, ErrorListener errorListener, String tag) {
+        XMLRequest request = new XMLRequest(url, listener, errorListener);
+        request.setTag(tag);
+        MyApplication.getRequestQueue().add(request);
     }
 
-    public static void getGson() {
-        GsonRequest<Weather> gsonRequest = new GsonRequest<Weather>(
-                "http://www.weather.com.cn/data/sk/101010100.html", Weather.class,
-                new Response.Listener<Weather>() {
-                    @Override
-                    public void onResponse(Weather weather) {
-                        WeatherInfo weatherInfo = weather.getWeatherinfo();
-                        Log.d("TAG", "city is " + weatherInfo.getCity());
-                        Log.d("TAG", "temp is " + weatherInfo.getTemp());
-                        Log.d("TAG", "time is " + weatherInfo.getTime());
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("TAG", error.getMessage(), error);
-            }
-        });
-        MyApplication.getRequestQueue().add(gsonRequest);
+    public static void getGson(String url, Class clazz, Listener listener, ErrorListener errorListener, String tag) {
+        GsonRequest request = new GsonRequest(url, clazz, listener, errorListener);
+        request.setTag(tag);
+        MyApplication.getRequestQueue().add(request);
     }
 }

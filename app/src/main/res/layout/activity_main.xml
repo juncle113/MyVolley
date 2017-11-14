@@ -11,11 +11,19 @@
         android:layout_height="wrap_content"
         android:text="取得字符串数据" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <Button
         android:id="@+id/Button_json"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="取得JSON数据" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <Button
         android:id="@+id/Button_gson"
@@ -23,11 +31,19 @@
         android:layout_height="wrap_content"
         android:text="取得GSON数据" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <Button
         android:id="@+id/Button_xml"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="取得XML数据" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <Button
         android:id="@+id/Button_image"
@@ -35,11 +51,19 @@
         android:layout_height="wrap_content"
         android:text="取得图片" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <Button
         android:id="@+id/Button_imageLoader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="取得缓存图片" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <Button
         android:id="@+id/Button_networkImage"
